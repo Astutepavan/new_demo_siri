@@ -1,16 +1,21 @@
 pipeline {
     agent any
     stages {
+        stage('checkout') {
+            steps {
+                // Get some code from a GitHub repository
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Astutepavan/new_demo_siri.git']])
+            }   
+         }
+
         stage('Build') {
             steps {
-                sh "echo building artifact"
+
+                // Run Maven on a Unix agent.
+                sh "mvn -Dmaven.test.failure.ignore=true clean install"
+
             }
-        }
-        // stage('Test') {
-        //     steps {
-        //         //
-        //     }
-        // }
+        }    
         // stage('Deploy') {
         //     steps {
         //         //
