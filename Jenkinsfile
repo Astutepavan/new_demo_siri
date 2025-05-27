@@ -20,7 +20,7 @@ pipeline {
             steps {
                 sh "pwd"
                 sh "ls ./target"
-                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsusser']]){
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsuser']]){
                 sh "/usr/local/bin/aws s3 cp /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war s3://test-buck-00038938938"}
             }
         }
