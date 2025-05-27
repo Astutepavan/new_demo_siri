@@ -16,10 +16,11 @@ pipeline {
 
             }
         }    
-        // stage('Deploy') {
-        //     steps {
-        //         //
-        //     }
-        // }
+        stage('versioning') {
+            steps {
+                sh "pwd"
+                sh "ls ./target"
+            }
+        }
     }
 }
