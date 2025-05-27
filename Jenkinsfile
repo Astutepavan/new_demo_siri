@@ -6,15 +6,15 @@ pipeline {
                 sh "echo building artifact"
             }
         }
-        stage('Test') {
-            steps {
-                //
-            }
-        }
-        stage('Deploy') {
-            steps {
-                //
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         //
+        //     }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         //
+        //     }
+        // }
     }
 }
