@@ -15,6 +15,17 @@ pipeline {
                 sh "mvn -Dmaven.test.failure.ignore=true clean install"
 
             }
+        }
+        stage('scaning') {
+            steps {
+
+                // Run Maven on a Unix agent.
+                sh "mvn sonar:sonar \
+                     -Dsonar.projectKey=demo_test \
+                     -Dsonar.host.url=http://54.173.210.207:9000 \
+                     -Dsonar.login=54c9e467a491c57056f470da5f3e8187848a6e91"
+
+            }
         }    
         stage('versioning') {
             steps {
