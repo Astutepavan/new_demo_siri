@@ -20,7 +20,7 @@
                 <!-- Optional URL to server. Default value is http://localhost:9000 -->
 
 		  
-		  <sonar.organization>test-project-new</sonar.organization>
+		  <sonar.organization>astutepavan</sonar.organization>
 		  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		  
 		  

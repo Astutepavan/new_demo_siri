@@ -23,6 +23,13 @@ pipeline {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsuser']]){
                 sh "/usr/local/bin/aws s3 cp /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war s3://test-buck-00038938938"}
             }
+        } 
+          stage('sonarscanning') {
+            steps {
+             withSonarQubeEnv('sonar') {
+             sh "mvn sonar:sonar"
+            }
+            }
         }        
     }
 }
