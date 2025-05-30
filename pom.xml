@@ -22,7 +22,7 @@
 		  
 		  <sonar.organization>test-project-new</sonar.organization>
 		  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-		  <sonar.host.login>bce0fb7e9051f589fe0b3262f056179a3556686d</sonar.host.login>
+		  
 		  
 
 				<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
