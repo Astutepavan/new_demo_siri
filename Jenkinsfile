@@ -24,5 +24,14 @@ pipeline {
                 sh "/usr/local/bin/aws s3 cp /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war s3://test-buck-00038938938"}
             }
         }
+
+         stage('versioning') {
+            steps {
+                sh "scp /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war ec2-user@52.207.213.17:/opt/apache-tomcat-9.0.105/webapps/newwar.war"
+                
+            }
+        }
+
+        
     }
 }
