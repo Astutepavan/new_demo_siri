@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-         stage('versioning') {
+         stage('autodeployment') {
             steps {
                 sh "scp /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war ec2-user@52.207.213.17:/opt/apache-tomcat-9.0.105/webapps/newwar.war"
                 
