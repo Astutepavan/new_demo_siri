@@ -25,10 +25,18 @@ pipeline {
             }
         }
 
-         stage('autodeployment') {
+        stage('autodeployment') {
             steps {
                 sshagent(['sshuser']) {
                 sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/siri_auto_ci/target/mavewebappdemo-2.0.0-SNAPSHOT.war ec2-user@52.207.213.17:/opt/apache-tomcat-9.0.105/webapps/newwar.war"
+                }
+                
+            }
+        }
+        stage('sonarscanner') {
+            steps {
+                withSonarQubeEnv('sonarqube-8.9.2') {
+                sh "mvn sonar:sonar"
                 }
                 
             }
